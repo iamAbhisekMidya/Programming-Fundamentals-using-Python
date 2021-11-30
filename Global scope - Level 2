@@ -1,0 +1,41 @@
+'''
+A teacher is in the process of generating few reports based on the marks scored by the students of her class in a project based assessment.
+Assume that the marks of her 10 students are available in a tuple. The marks are out of 25.
+Write a python program to implement the following functions:
+1. find_more_than_average(): Find and return the percentage of students who have scored more than the average mark of the class.
+2. generate_frequency(): Find how many students have scored the same marks. For example, how many have scored 0, how many have scored 1,
+   how many have scored 3….how many have scored 25. The result should be populated in a list and returned.
+3. sort_marks(): Sort the marks in the increasing order from 0 to 25. The sorted values should be populated in a list and returned.
+'''
+
+
+#Global variable
+list_of_marks=(12,18,25,24,2,5,18,20,20,21)
+
+def find_more_than_average():
+    s=sum(list_of_marks)
+    n=len(list_of_marks)
+    a=s/n
+    c=0 
+    for i in list_of_marks:
+        if i>a:
+            c+=1 
+    r=c*100/n
+    return r
+
+def sort_marks():
+    global list_of_marks
+    x=list(list_of_marks)
+    x.sort()
+    return x
+
+def generate_frequency():
+    lst=[]
+    for i in range(26):
+        x=list_of_marks.count(i)
+        lst.append(x)
+    return lst
+
+print(find_more_than_average())
+print(generate_frequency())
+print(sort_marks())
